@@ -25,19 +25,14 @@ public class CompraProductosStepsDefs {
         }
 
         compraProductosSteps.agregarAlCarrito();
-
+        compraProductosSteps.volverALaGaleria();
     }
 
     @Given("estoy en la aplicación de SauceLabs")
     public void estoyEnLaAplicacion() {
         AppCapabilities configuracion = AppCapabilities.from("carrito.properties");
         AppiumDriverManager.getInstance().startApp(configuracion);
-        compraProductosSteps.volverALaGaleria();
-
     }
-
-
-
 
     @And("valido que carguen correctamente los productos en la galería")
     public void validarGaleria() {

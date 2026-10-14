@@ -10,7 +10,7 @@ Característica: Validación del carrito de compras
     Entonces valido el carrito de compra actualice correctamente
 
     Ejemplos:
-      | PRODUCTO                  | UNIDADES |
-      | Sauce Labs Backpack       | 1        |
-      | Sauce Labs Bolt - T-Shirt | 1        |
-      | Sauce Labs Bike Light     | 2        |
+      | PRODUCTO                | UNIDADES |
+      | Sauce Labs Backpack     | 1        |
+      | Sauce Labs Bolt T-Shirt | 1        |
+      | Sauce Labs Bike Light   | 2        |

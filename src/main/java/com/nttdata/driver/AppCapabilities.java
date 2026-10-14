@@ -82,7 +82,7 @@ public final class AppCapabilities {
         options.setNoReset(Boolean.parseBoolean(properties.getProperty("noReset", "true")));
         options.setAutoGrantPermissions(Boolean.parseBoolean(properties.getProperty("autoGrantPermissions", "true")));
 
-        options.setCapability("appium:forceAppLaunch", true);
+        options.setCapability("appium:forceAppLaunch", false);
         options.setCapability("appium:settings[waitForIdleTimeout]", 1000);
         options.setCapability("appium:disableWindowAnimation", true);
         options.setCapability("appium:skipLogcatCapture", true);

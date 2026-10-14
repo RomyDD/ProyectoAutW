@@ -20,13 +20,14 @@ public class CompraProductosScreen extends BaseScreen {
 
 
 
+
     public void seleccionarProducto(String nombreProducto) {
-        driver().findElement(By.xpath("//android.widget.TextView[@resource-id='com.saucelabs.mydemoapp.android:id/titleTV' and @text='" + nombreProducto + "']")).click();
+        By producto = By.xpath("//android.widget.ImageView[@content-desc='" + nombreProducto + "']");
+        waitForVisible(producto).click();
     }
 
-
     public void aumentarCantidad() {
-        driver().findElement(botonAumentarCantidad).click();
+        waitForVisible(botonAumentarCantidad).click();
     }
 
     public void agregarAlCarrito() {
