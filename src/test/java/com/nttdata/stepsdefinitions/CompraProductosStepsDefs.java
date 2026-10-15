@@ -2,6 +2,7 @@
 package com.nttdata.stepsdefinitions;
 
 import com.nttdata.steps.CompraProductosSteps;
+import com.nttdata.support.ScreenshotAttacher;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
@@ -11,6 +12,8 @@ import io.cucumber.java.en.Given;
 
 import com.nttdata.driver.AppCapabilities;
 import com.nttdata.driver.AppiumDriverManager;
+
+import static org.junit.Assert.assertTrue;
 
 public class CompraProductosStepsDefs {
 
@@ -26,6 +29,7 @@ public class CompraProductosStepsDefs {
 
         compraProductosSteps.agregarAlCarrito();
         compraProductosSteps.volverALaGaleria();
+
     }
 
     @Given("estoy en la aplicación de SauceLabs")
@@ -36,15 +40,15 @@ public class CompraProductosStepsDefs {
 
     @And("valido que carguen correctamente los productos en la galería")
     public void validarGaleria() {
-        // Implementaremos la validación de la galería
-        // en el siguiente paso.
+        assertTrue(
+                "No se encontro la galeria de productos: el acceso a la galeria de productos no fue exitoso",
+                compraProductosSteps.estaEnGaleriaExitoso()
+        );
     }
-
-
-
     @Then("valido el carrito de compra actualice correctamente")
     public void validarCarrito() {
-        // Aquí implementaremos la validación del carrito.
+        compraProductosSteps.verCarrito();
+        compraProductosSteps.volverALaGaleria();
     }
 
 }

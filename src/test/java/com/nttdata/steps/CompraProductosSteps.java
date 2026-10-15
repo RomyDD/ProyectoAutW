@@ -5,8 +5,8 @@ import com.nttdata.screens.CompraProductosScreen;
 
 public class CompraProductosSteps {
 
-    private final CompraProductosScreen screen =
-            new CompraProductosScreen();
+    private final CompraProductosScreen screen = new CompraProductosScreen();
+
 
     public void seleccionarProducto(String nombreProducto) {
         System.out.println("[CompraProductosSteps] seleccionarProducto -> " + nombreProducto);
@@ -23,8 +23,16 @@ public class CompraProductosSteps {
         screen.agregarAlCarrito();
     }
 
+    public void verCarrito() {
+        System.out.println("[CompraProductosSteps] ver Carrito");
+        screen.verCarrito();
+    }
     public void volverALaGaleria() {
         screen.volverALaGaleria();
     }
 
+    public boolean estaEnGaleriaExitoso() {
+        System.out.println("[SauceLabsLoginSteps] loginFueExitoso: validando resultado...");
+        return screen.estaEnGaleriaDeProductos();
+    }
 }
